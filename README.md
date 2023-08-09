@@ -16,24 +16,42 @@ pip install --upgrade beepberry-lib
 ## Examples
 
 ```python
-import beepbeery
+import beepberry
 
 #rgb
+import time
 bb=beepberry.BEEPBERRY()
 bb.rgb(0,0,100)   #r,g,b   form 0 to 255 
 time.sleep(1)
 bb.rgb_off()
 
 #button  See: https://gpiozero.readthedocs.io/en/stable/recipes.html#button 
-bb.button   #button.is_pressed  button.wait_for_press() button.when_presse  button.when_released
+#button.is_pressed  button.wait_for_press() button.when_presse  button.when_released
+from gpiozero import Button
+from signal import pause
+
+def say_hello():
+    print("Hello!")
+
+def say_goodbye():
+    print("Goodbye!")
+
+button = bb.button
+
+button.when_pressed = say_hello
+button.when_released = say_goodbye
+
+pause()
 
 #scr
+from PIL import Image, ImageDraw, ImageFont
+bb=beepberry.BEEPBERRY()
 scr=bb.lcd
 
 font = ImageFont.truetype("yahei.ttf", 24)  # load font
 
-scr.text(xy=(10,10),text='dice',fill='red',font=font)
-scr.show() 
+scr.text(xy=(10,10),text='beepberry',fill='red',font=font)
+bb.show() 
 
 bb.show_pic('test.jpg')   #show pics directly
 ```
