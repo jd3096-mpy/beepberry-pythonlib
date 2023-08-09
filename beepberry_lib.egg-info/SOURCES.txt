@@ -1,0 +1,7 @@
+README.md
+setup.py
+beepberry/__init__.py
+beepberry_lib.egg-info/PKG-INFO
+beepberry_lib.egg-info/SOURCES.txt
+beepberry_lib.egg-info/dependency_links.txt
+beepberry_lib.egg-info/top_level.txt
