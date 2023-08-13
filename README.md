@@ -54,6 +54,9 @@ scr.text(xy=(10,10),text='beepberry',fill='red',font=font)
 bb.show() 
 
 bb.show_pic('test.jpg')   #show pics directly
+
+#battery
+vbat=bb.battery()
 ```
 ## KEYMAP
 
@@ -86,8 +89,11 @@ bb.show_pic('test.jpg')   #show pics directly
  *  +------------+----+-------------------+-----+-------------+
 ```
 
-
 ## Change Log
+
+### [0.0.2] - 2023-08-13
+
+- Add battery.
 
 ### [0.0.1] - 2023-08-09
 

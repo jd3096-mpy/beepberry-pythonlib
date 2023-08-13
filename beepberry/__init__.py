@@ -4,12 +4,12 @@ import os
 import time
 
 #------------------------
-__version__ = '0.0.1'
-__last_modified__ = '2023/8/9'
+__version__ = '0.0.2'
+__last_modified__ = '2023/8/14'
 
 """
 PYTHON-LIB FOR BEEPBERRY BY jd3096
-CONTAINS：button|rgb|screen
+CONTAINS：button|rgb|screen|battery
  *					BBQ20KBD PMOD KEYBOARD LAYOUT
  *
  *	+------+-----+----+----+----+----+----+-----+-----+-------+
@@ -92,11 +92,12 @@ class BEEPBERRY():
         # self.image.paste(region, (0, 0))
         # self.show()
 
-
-        
-
-
-
-
-
+    def battery(self):
+        self.remove_keyboard() 
+        rw=self.i2c.read_i2c_block_data(0x1f, 0x17, 2)
+        value=rw[1]*256+rw[0]
+        vbat = 3.3* (value/4095) * 2
+        vbat=round(vbat,2)
+        self.load_keyboard()
+        return vbat
 

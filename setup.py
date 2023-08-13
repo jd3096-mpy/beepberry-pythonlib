@@ -12,7 +12,7 @@ URL = 'https://github.com/Xgorobot/XGO-PythonLib'
 EMAIL = '1091329318@qq.com'
 AUTHOR = 'jd3096'
 REQUIRES_PYTHON = '>=3.6.0'
-VERSION = '0.0.1'
+VERSION = '0.0.2'
 
 # What packages are required for this module to be executed?
 REQUIRED = [
